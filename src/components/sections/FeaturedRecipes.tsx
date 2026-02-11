@@ -12,17 +12,17 @@ export default function FeaturedRecipes() {
   useGSAP(
     () => {
       const cards = gsap.utils.toArray<HTMLElement>(".recipe-card");
-      cards.forEach((card) => {
+      cards.forEach((card, i) => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            end: "top 30%",
-            scrub: 1,
+            start: "top 90%",
+            end: "top 50%",
+            scrub: 0.5,
           },
           opacity: 0,
-          y: 100,
-          scale: 0.95,
+          y: 60,
+          scale: 0.97,
         });
       });
     },
@@ -48,11 +48,11 @@ export default function FeaturedRecipes() {
       </div>
 
       {/* Recipe stack */}
-      <div className="space-y-8 md:space-y-0">
+      <div className="flex flex-col gap-12 md:gap-20">
         {featuredRecipes.map((recipe, index) => (
           <div
             key={recipe.id}
-            className="recipe-card min-h-screen flex items-center justify-center px-6 md:px-12"
+            className="recipe-card flex items-center justify-center px-6 md:px-12"
           >
             <div className="w-full max-w-5xl bg-surface border border-[#333333] rounded-2xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 group hover:border-amber/30 transition-colors duration-500">
               {/* Image */}
