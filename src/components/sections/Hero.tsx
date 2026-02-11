@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import SmokeParticles from "@/components/effects/SmokeParticles";
+import HeroPan from "@/components/effects/HeroPan";
 import ScrollIndicator from "@/components/effects/ScrollIndicator";
 
 export default function Hero() {
@@ -91,6 +92,9 @@ export default function Hero() {
 
       {/* Smoke particles */}
       <SmokeParticles />
+
+      {/* Interactive pan (z-15, between smoke and content) */}
+      <HeroPan />
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
